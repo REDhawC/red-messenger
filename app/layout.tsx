@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-const openSans = Poppins({ weight: ['400'], subsets: ['latin'] })
+const openSans = Poppins({ weight: ['500'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Red Messenger',
