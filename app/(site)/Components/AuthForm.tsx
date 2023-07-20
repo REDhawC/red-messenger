@@ -3,7 +3,10 @@ import Input from "@/app/components/Input"
 // make next.js know this component is designed for cilent end
 import { useCallback, useState } from "react"
 import { FieldValues, useForm, SubmitHandler } from 'react-hook-form'
+import { BsGithub, BsGoogle } from 'react-icons/bs'
+
 import Button from "./Button"
+import AuthSocialButton from "./AuthSocialButton"
 
 
 type variant = 'LOGIN' | 'REGISTER'
@@ -54,7 +57,7 @@ export const AuthForm = () => {
 
     return (
         <div
-            className="mt-8 sm:mt-4 sm:w-full sm:max-w-md"
+            className="mt-4 sm:mt-4 sm:w-full sm:max-w-md"
         >
             <div
                 className="bg-white px-4 py-4 shadow rounded-lg mx-4"
@@ -62,10 +65,10 @@ export const AuthForm = () => {
                 <form className="space-y-6"
                     onSubmit={handleSubmit(onSubmit)}>
                     {variant === 'REGISTER' && (
-                        <Input id="name" label="Name" register={register} errors={errors} />
+                        <Input id="name" label="Name" register={register} errors={errors} disabled={loading} />
                     )}
-                    <Input id="email" label="Email address" register={register} errors={errors} />
-                    <Input id="password" label="Password" register={register} errors={errors} />
+                    <Input id="email" label="Email address" register={register} errors={errors} disabled={loading} />
+                    <Input id="password" label="Password" register={register} errors={errors} disabled={loading} />
                     <div>
                         <Button
                             disabled={loading}
@@ -96,6 +99,33 @@ export const AuthForm = () => {
                         >
                             <span className="bg-white px-2 text-gray-500">Or continue with</span>
                         </div>
+                    </div>
+                    <div className="mt-6 flex gap-2">
+                        <AuthSocialButton
+                            icon={BsGithub}
+                            onClick={() => { socialAction('github') }} />
+                        <AuthSocialButton
+                            icon={BsGoogle}
+                            onClick={() => { socialAction('google') }} />
+                    </div>
+                </div>
+                <div
+                    className="flex
+                gap-2
+                justify-center
+                text-sm
+                mt-6
+                px-2
+                text-gray-500">
+                    <div>
+                        {variant === 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+                    </div>
+                    <div
+                        onClick={toggleVariant}
+                        className="
+                    underline cursor-pointer
+                    ">
+                        {variant === 'LOGIN' ? 'Create an account' : 'Login'}
                     </div>
                 </div>
             </div>
