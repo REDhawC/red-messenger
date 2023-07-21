@@ -1,6 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import ToasterContext from './context/ToasterContext'
+import AuthContext from './context/AuthContext'
 
 const openSans = Poppins({ weight: ['500'], subsets: ['latin'] })
 
@@ -16,7 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={openSans.className}>{children}</body>
+      <body className={openSans.className}>
+        <AuthContext>
+          <ToasterContext />
+          {children}
+        </AuthContext>
+      </body>
     </html>
   )
 }
