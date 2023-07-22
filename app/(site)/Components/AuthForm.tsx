@@ -67,6 +67,7 @@ export const AuthForm = () => {
                 redirect: false
             })
                 .then((callback) => {
+                    console.log(callback);
                     if (callback?.error) {
                         toast.error('Invalid Credentials')
                     }
@@ -82,10 +83,13 @@ export const AuthForm = () => {
         setLoading(true)
         signIn(action, { redirect: false })
             .then((callback) => {
+                console.log(callback);
+
                 if (callback?.error) {
                     toast.error('Invalid Credentials')
                 }
                 if (callback?.ok && !callback?.error) {
+                    console.log('social Log in');
                     toast.success('Logged in!')
                 }
             })
@@ -140,10 +144,10 @@ export const AuthForm = () => {
                     <div className="mt-6 flex gap-2">
                         <AuthSocialButton
                             icon={BsGithub}
-                            onClick={() => { socialAction('github') }} />
+                            onClick={() => socialAction('github')} />
                         <AuthSocialButton
                             icon={BsGoogle}
-                            onClick={() => { socialAction('google') }} />
+                            onClick={() => socialAction('google')} />
                     </div>
                 </div>
                 <div
