@@ -38,7 +38,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
         `, isOpen ? 'hidden' : 'block w-full left-0')}
         >
             <div className="px-5">
-                <div className="flex justify-between mb-4 pt-4">
+                <div className="flex justify-between pt-4" style={{ paddingBottom: 14 }}>
                     <div className="
                     text-2xl
                     font-bold
