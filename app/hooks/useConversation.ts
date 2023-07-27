@@ -12,7 +12,7 @@ const useConversation = () => {
     }, [params?.conversationId])
 
     const isOpen = useMemo(() => !!conversationId, [conversationId])
-//  !!conversationId -> if conversationId exists, return true ; else false
+    //  !!conversationId -> if conversationId exists, return true ; else false
 
     return useMemo(() => ({ isOpen, conversationId }), [isOpen, conversationId])
 }
