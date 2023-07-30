@@ -26,6 +26,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
     const otherUser = useOtherUser(data)
 
+    const [isModalOpen, setisModalOpen] = useState(false)
+
     const joinedDate = useMemo(() => format(new Date(otherUser.createdAt), 'PP'), [otherUser.createdAt])
 
     const title = useMemo(() => data.name || otherUser.name, [data.name, otherUser.name])
@@ -41,7 +43,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
     return (
         <>
-            <Modal isOpen onClose={() => { }}></Modal>
+            <Modal isOpen={isModalOpen} onClose={() => { setisModalOpen(false) }}>
+                <div className="">
+
+                </div>
+            </Modal>
             <Transition.Root show={isOpen} as={Fragment}>
                 <Dialog as='div' className="relative z-50" onClose={onClose}>
                     <Transition.Child
