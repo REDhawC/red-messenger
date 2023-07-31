@@ -1,5 +1,5 @@
 'use client'
-import Input from "@/app/components/Input"
+import Input from "@/app/components/inputs/Input"
 // make next.js know this component is designed for cilent end
 import axios from "axios"
 import { useCallback, useEffect, useState } from "react"
