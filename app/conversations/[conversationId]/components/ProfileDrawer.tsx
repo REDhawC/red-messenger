@@ -138,8 +138,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                                         Emails
                                                                     </dt>
                                                                     <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
-                                                                        {data.users.map((user) => (
-                                                                            <p><span className="text-orange-500 w-28 inline-block">{user.name}</span> {user.email}</p>))}
+                                                                        {data.users.map((user, index) => (
+                                                                            <p key={index}><span className="text-orange-500 w-28 inline-block">{user.name}</span> {user.email}</p>))}
                                                                     </dd>
                                                                 </div>
                                                             )}
