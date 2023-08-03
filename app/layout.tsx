@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import ToasterContext from './context/ToasterContext'
 import AuthContext from './context/AuthContext'
+import ActiveStatus from './components/ActiveStatus'
 
 const openSans = Poppins({ weight: ['500'], subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={openSans.className}>
         <AuthContext>
           <ToasterContext />
+          <ActiveStatus />
           {children}
         </AuthContext>
       </body>
