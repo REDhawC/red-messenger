@@ -56,10 +56,11 @@ const Form = () => {
                 className="flex items-center gap-2 lg:gap-4 w-full"
             >
                 <MessageInput id='message'
+                    autoCompleteType="off"
                     register={register}
                     errors={errors}
                     required
-                    placeholder='Write a message'
+                    placeholder='Write a message here'
                 ></MessageInput>
                 <button
                     type="submit"
