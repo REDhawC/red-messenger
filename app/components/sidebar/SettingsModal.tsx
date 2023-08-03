@@ -106,7 +106,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                                     register={register}
                                 ></Input>
                                 <div>
-                                    <label className="block text-sm font-medium leading-6 text-gray-900">Photo</label>
+                                    <label className="block text-sm font-medium  leading-6 text-gray-900">Photo</label>
                                 </div>
                                 <div className="
                             mb-2
@@ -129,6 +129,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                                             disabled={isLoading}
                                             type="button"
                                             secondary
+                                            outlined
                                         >
                                             Change
                                         </Button>
@@ -170,6 +171,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                         <Button
                             disabled={isLoading}
                             danger
+                            logout
                             onClick={handleLogout}>
                             Log out
                         </Button>

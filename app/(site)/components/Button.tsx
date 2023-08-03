@@ -8,7 +8,9 @@ interface ButtonProps {
     onClick?: () => void;
     secondary?: boolean;
     danger?: boolean;
+    logout?: boolean;
     disabled?: boolean;
+    outlined?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,7 +20,9 @@ const Button: React.FC<ButtonProps> = ({
     onClick,
     secondary,
     danger,
-    disabled
+    logout,
+    disabled,
+    outlined
 }) => {
     return (
         <button
@@ -42,6 +46,8 @@ const Button: React.FC<ButtonProps> = ({
                 fullWidth && 'w-full',
                 secondary ? 'text-gray-900' : 'text-white',
                 danger && 'bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600',
+                logout && 'w-28 block',
+                outlined && 'border-2 border-orange-500 text-orange-500 hover:text-orange-600 hover:border-orange-600',
                 !secondary && !danger && 'bg-orange-500 hover:bg-orange-600 focus-visible:outline-orange-700'
             )}
         >
