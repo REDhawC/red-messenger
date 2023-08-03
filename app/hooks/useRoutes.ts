@@ -3,8 +3,9 @@ import { useParams, usePathname } from "next/navigation";
 import { HiChat } from 'react-icons/hi'
 import {
     HiArrowLeftOnRectangle,
-    HiUsers
+    HiUsers,
 } from 'react-icons/hi2'
+import { FiSettings } from "react-icons/fi";
 import { signOut } from "next-auth/react";
 
 import useConversation from "./useConversation";
@@ -28,11 +29,17 @@ const useRoutes = () => {
 
         },
         {
-            label: 'Logout',
+            label: 'Setting',
             href: '#',
-            onClick: () => signOut(),
-            icon: HiArrowLeftOnRectangle,
+            onClick: () => {},
+            icon: FiSettings,
         }
+        // {
+        //     label: 'Logout',
+        //     href: '#',
+        //     onClick: () => signOut(),
+        //     icon: HiArrowLeftOnRectangle,
+        // }
     ], [pathname, conversationId])
 
     return routes

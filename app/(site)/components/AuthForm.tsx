@@ -97,9 +97,14 @@ export const AuthForm = () => {
     }
 
     return (
+
         <div
             className="mt-4 sm:mt-4 sm:w-full sm:max-w-md"
         >
+            <h2
+                className="text-center text-3xl font-bold tracking-tight text-gray-900">
+                {variant === 'REGISTER' ? ('Register now!'): ('Sign in to your account')}
+            </h2>
             <div
                 className="bg-white px-4 py-4 shadow rounded-lg mx-4"
             >
@@ -109,7 +114,7 @@ export const AuthForm = () => {
                         <Input id="name" label="Name" register={register} errors={errors} disabled={loading} />
                     )}
                     <Input id="email" label="Email address" register={register} errors={errors} disabled={loading} />
-                    <Input id="password" label="Password" register={register} errors={errors} disabled={loading} />
+                    <Input id="password" type="password" label="Password" register={register} errors={errors} disabled={loading} />
                     <div>
                         <Button
                             disabled={loading}

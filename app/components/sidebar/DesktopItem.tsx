@@ -9,6 +9,7 @@ interface DesktopItemProps {
     icon: any,
     href: string,
     onClick?: () => void,
+    isSettingOpen?: boolean,
     active?: boolean
 }
 
@@ -17,10 +18,12 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
     icon: Icon,
     href,
     onClick,
+    isSettingOpen,
     active,
 
 }) => {
     const handleClick = () => {
+
         if (onClick) {
             return onClick()
         }
@@ -42,9 +45,13 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
             hover:bg-orange-500
             hover:text-md
             `,
-                    active && 'bg-orange-500 text-white'
+                    (active) && 'bg-orange-500 text-white',
+                    (isSettingOpen) && 'bg-orange-600 text-white',
                 )}>
-                <Icon className="h-6 w-6 shrink-0" ></Icon>
+                <Icon className={clsx(
+                    "h-6 w-6 shrink-0",
+                    (isSettingOpen) && 'animate-spin',
+                )} ></Icon>
                 <span className="sr-only">{label}</span>
             </Link>
         </li>

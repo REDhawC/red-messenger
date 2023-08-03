@@ -7,6 +7,7 @@ interface MobileItemProps {
     href: string,
     icon: any,
     active?: boolean,
+    isSettingOpen?: boolean,
     onClick?: () => void
 }
 
@@ -15,6 +16,7 @@ const MobileItem: React.FC<MobileItemProps> = (
         href,
         icon: Icon,
         active,
+        isSettingOpen,
         onClick
     }
 ) => {
@@ -43,7 +45,10 @@ const MobileItem: React.FC<MobileItemProps> = (
             hover:bg-gray-100
         `, active && 'bg-gray-100 text-orange-600')}
         >
-            <Icon className="h-6 w-6" />
+            <Icon className={clsx(
+                "h-6 w-6",
+                (isSettingOpen) && 'animate-spin',
+            )} />
         </Link>
     )
 }

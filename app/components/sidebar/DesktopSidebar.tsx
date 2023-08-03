@@ -59,14 +59,15 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
                 items-center
                 space-y-1
                 ">
-                        {routes.map((item) => (
+                        {routes.map((item, index) => (
                             <DesktopItem
                                 key={item.label}
                                 href={item.href}
                                 label={item.label}
                                 icon={item.icon}
                                 active={item.active}
-                                onClick={item.onClick} />
+                                onClick={index === 2 ? () => { setIsOpen(true) } : item.onClick}
+                                isSettingOpen={index === 2 && isOpen} />
                         ))}
                     </ul>
 
