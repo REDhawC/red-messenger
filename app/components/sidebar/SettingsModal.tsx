@@ -11,7 +11,8 @@ import Input from "../inputs/Input"
 import Image from "next/image"
 import placeholder from '../../../public/placeholder.jpg'
 import { CldUploadButton } from "next-cloudinary"
-import Button from "@/app/(site)/components/Button"
+import Button from "../../../app/(site)/components/Button"
+
 
 
 interface SettingsModalProps {

@@ -1,8 +1,8 @@
 'use client'
 
 import { MdOutlineGroupAdd } from 'react-icons/md'
-import useConversation from "@/app/hooks/useConversation"
-import { FullConversationType } from "@/app/types"
+import useConversation from "../../../app/hooks/useConversation"
+import { FullConversationType } from "../../../app/types"
 import clsx from "clsx"
 import { useRouter } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
@@ -10,7 +10,7 @@ import ConversationBox from './ConversationBox'
 import GroupChatModal from './GroupChatModal'
 import { User } from '@prisma/client'
 import { useSession } from 'next-auth/react'
-import { pusherClient } from '@/app/libs/pusher'
+import { pusherClient } from '../../../app/libs/pusher'
 import { find } from 'lodash'
 import conversationId from '../[conversationId]/page'
 

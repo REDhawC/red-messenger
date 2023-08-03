@@ -1,15 +1,15 @@
 'use client'
 
-import Avatar from "@/app/components/Avatar"
-import useOtherUser from "@/app/hooks/useOtherUsers"
+import Avatar from "../../../../app/components/Avatar"
+import useOtherUser from "../../../../app/hooks/useOtherUsers"
 import { Transition, Dialog } from "@headlessui/react"
 import { Conversation, User } from "@prisma/client"
 import { format } from "date-fns"
 import { Fragment, useMemo, useState } from 'react'
 import { IoClose, IoTrash } from 'react-icons/io5'
 import ConfirmModal from "./ConfirmModal"
-import AvatarGroup from "@/app/components/AvatarGroup"
-import useActiveList from "@/app/hooks/useActiveList"
+import AvatarGroup from "../../../../app/components/AvatarGroup"
+import useActiveList from "../../../../app/hooks/useActiveList"
 
 
 interface ProfileDrawerProps {

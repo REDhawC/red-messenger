@@ -1,8 +1,8 @@
 'use client'
 
-import Button from "@/app/(site)/components/Button"
-import Modal from "@/app/components/Modal"
-import useConversation from "@/app/hooks/useConversation"
+import Button from "../../../../app/(site)/components/Button"
+import Modal from "../../../../app/components/Modal"
+import useConversation from "../../../../app/hooks/useConversation"
 import { Dialog } from "@headlessui/react"
 import axios from "axios"
 import { useRouter } from "next/navigation"
