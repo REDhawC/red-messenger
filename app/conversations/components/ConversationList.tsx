@@ -99,6 +99,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
             />
             <aside
                 className={clsx(`
+                no-scrollbar
                     fixed
                     inset-y-0
                     pb-20

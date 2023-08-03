@@ -14,6 +14,7 @@ const UserList: React.FC<UserListProps> = ({
     return (
         <aside
             className="fixed
+            no-scrollbar
         inset-y-0
         pb-20
         lg:pb-0
@@ -40,10 +41,10 @@ const UserList: React.FC<UserListProps> = ({
                         Friends
                     </div>
                 </div>
-                {items.map((item)=> (
-                    <UserBox 
-                    key={item.id}
-                    data={item}
+                {items.map((item) => (
+                    <UserBox
+                        key={item.id}
+                        data={item}
                     />
                 ))}
             </div>
